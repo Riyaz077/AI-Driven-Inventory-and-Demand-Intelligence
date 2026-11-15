@@ -137,7 +137,7 @@ pytest -q
 Use synthetic, public or explicitly authorized business data. Do not commit confidential sales, supplier, employee or customer information. Forecast quality depends on data quality, stockout censoring, promotions, product lifecycle and structural changes. Validate assumptions with supply-chain professionals before acting on recommendations.
 
 ## Author
-**Mohamed Riyaz S.** — Computer Science & Engineering | Business Analytics
 
-## License
-MIT License. See [LICENSE](LICENSE).
+**Mohamed Riyaz S.**  
+Integrated M.Tech, Computer Science and Engineering (Business Analytics)  
+VIT Chennai
