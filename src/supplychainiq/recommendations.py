@@ -1,0 +1,3 @@
+from .inventory_optimizer import inventory_recommendation
+def recommend_for_product(payload):
+    return inventory_recommendation(avg_daily_demand=payload.avg_daily_demand,daily_demand_std=payload.daily_demand_std,lead_time_days=payload.lead_time_days,current_stock=payload.current_stock,annual_demand=payload.annual_demand,order_cost=payload.order_cost,annual_holding_cost_per_unit=payload.annual_holding_cost_per_unit,service_level_z=payload.service_level_z)

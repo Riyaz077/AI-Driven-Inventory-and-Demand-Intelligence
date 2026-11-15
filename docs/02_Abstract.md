@@ -1,0 +1,2 @@
+# Abstract
+SupplyChainIQ is an AI-assisted prototype for demand forecasting and inventory planning. It analyses synthetic daily SKU demand, engineers lagged and calendar features, evaluates forecasting baselines using a chronological holdout, and translates demand statistics into EOQ, safety-stock and reorder-point indicators. A Streamlit dashboard and FastAPI service demonstrate analyst access. Results are methodological demonstrations, not evidence of performance in a real business.

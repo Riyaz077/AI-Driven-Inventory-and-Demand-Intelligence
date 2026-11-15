@@ -1,0 +1,9 @@
+project:
+  name: SupplyChainIQ
+  environment: development
+forecasting:
+  test_days: 28
+  random_state: 42
+inventory:
+  default_service_level_z: 1.65
+  default_lead_time_days: 7
