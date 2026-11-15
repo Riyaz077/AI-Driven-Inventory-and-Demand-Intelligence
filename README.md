@@ -1,4 +1,4 @@
-# 📦 SupplyChainIQ
+#  SupplyChainIQ
 ### AI-Powered Supply Chain, Demand Forecasting and Inventory Optimization System
 
 **Predict Demand. Optimize Inventory. Engineer Smarter Supply Chains.**
