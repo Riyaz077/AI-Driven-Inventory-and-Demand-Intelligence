@@ -5,7 +5,6 @@
 
 SupplyChainIQ is an extensible analytics prototype connecting product-level demand forecasting with inventory planning. It includes synthetic daily-demand data, time-aware feature engineering, forecasting baselines, inventory calculations (EOQ, safety stock and reorder point), a Streamlit dashboard, a FastAPI endpoint, tests and technical documentation.
 
-> **Project status:** Educational/portfolio prototype. The bundled data is synthetic. This project does not connect to live ERP, WMS, supplier or point-of-sale systems. Forecasts and replenishment calculations are decision-support estimates, not guaranteed optimal decisions.
 
 ## Key capabilities
 - Synthetic daily demand generation for multiple SKUs
@@ -76,26 +75,21 @@ Metrics:
 
 These formulas make simplifying assumptions. Real policies should consider lead-time variability, demand/lead-time dependence, review cadence, service-level definitions, supplier minimums, pack sizes, perishability, capacity and inbound orders.
 
-API Usage – Inventory Recommendation
-Submit a POST request to /recommendation with SKU details, demand statistics, inventory levels, and cost parameters to generate optimized replenishment recommendations.
+## **API Usage – Inventory Recommendation**
 
-Sample request payload:
-{
-  "sku": "SKU-0001",
-  "avg_daily_demand": 18.5,
-  "daily_demand_std": 4.2,
-  "lead_time_days": 7,
-  "current_stock": 95,
-  "annual_demand": 6752.5,
-  "order_cost": 250,
-  "annual_holding_cost_per_unit": 35,
-  "service_level_z": 1.65
-}
+The /recommendation API endpoint accepts a POST request containing essential inventory and demand-related parameters to generate intelligent stock replenishment recommendations.
 
-## Testing
-```bash
-pytest -q
-```
+Key input parameters:
+- SKU: Unique product identifier.
+- Demand Metrics: Average daily demand and demand variability.
+- Lead Time: Supplier delivery duration in days.
+- Current Stock: Available inventory quantity.
+- Annual Demand: Estimated yearly product demand.
+- Cost Parameters: Ordering cost and annual holding cost per unit.
+- Service Level: Desired inventory availability level.
+The API processes these inputs to support optimized replenishment planning, inventory cost management, and data-driven stock decisions.
+
+
 
 ## **Future Enhancements & Roadmap**
 
