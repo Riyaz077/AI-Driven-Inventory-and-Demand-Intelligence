@@ -51,40 +51,15 @@ SupplyChainIQ/
 └── LICENSE
 ```
 
-## Quick start
-### 1. Environment
-**Windows PowerShell**
-```powershell
-python -m venv .venv
-.venv\Scripts\Activate.ps1
-```
-**macOS/Linux**
-```bash
-python -m venv .venv
-source .venv/bin/activate
-```
-### 2. Install
-```bash
-pip install -r requirements.txt
-```
-### 3. Generate synthetic data
-```bash
-python scripts/prepare_data.py --rows 12000
-```
-### 4. Train and evaluate
-```bash
-python scripts/train_models.py
-```
-Metrics are saved to `reports/evaluation/forecast_metrics.json`.
-### 5. Run dashboard
-```bash
-streamlit run dashboard/app.py
-```
-### 6. Run API (optional, separate terminal)
-```bash
-uvicorn api.main:app --reload
-```
-API docs: http://127.0.0.1:8000/docs
+## **Quick Start**
+
+- Create and activate a Python virtual environment.
+- Install the required dependencies from `requirements.txt`.
+- Generate synthetic demand forecasting data using the preparation script.
+- Train and evaluate the forecasting models.
+- Save evaluation metrics in `reports/evaluation/forecast_metrics.json`.
+- Launch the interactive Streamlit dashboard.
+- Optionally start the FastAPI backend and access API documentation at `http://127.0.0.1:8000/docs`.
 
 ## Forecasting methodology
 The starter compares a 7-day seasonal-naive benchmark with a Random Forest regressor using prior demand lags, shifted rolling statistics and calendar/promotion features. The evaluation period is chronologically later than the training period. The example predicts one step ahead using observed historical lags; multi-step recursive forecasting and rolling-origin backtesting are future extensions.
@@ -101,9 +76,10 @@ Metrics:
 
 These formulas make simplifying assumptions. Real policies should consider lead-time variability, demand/lead-time dependence, review cadence, service-level definitions, supplier minimums, pack sizes, perishability, capacity and inbound orders.
 
-## API example
-`POST /recommendation`
-```json
+API Usage – Inventory Recommendation
+Submit a POST request to /recommendation with SKU details, demand statistics, inventory levels, and cost parameters to generate optimized replenishment recommendations.
+
+Sample request payload:
 {
   "sku": "SKU-0001",
   "avg_daily_demand": 18.5,
@@ -115,23 +91,23 @@ These formulas make simplifying assumptions. Real policies should consider lead-
   "annual_holding_cost_per_unit": 35,
   "service_level_z": 1.65
 }
-```
 
 ## Testing
 ```bash
 pytest -q
 ```
 
-## Roadmap
-- [ ] XGBoost and LightGBM comparisons
-- [ ] LSTM experiments with rolling-origin validation
-- [ ] Promotion, price, holiday and supplier lead-time features
-- [ ] ABC/XYZ inventory segmentation
-- [ ] Probabilistic forecasts and service-level optimization
-- [ ] Demand spike and supplier-delay scenario analysis
-- [ ] Database, authentication and role-based access
-- [ ] Docker and cloud deployment
-- [ ] Approved ERP/WMS data connectors
+## **Future Enhancements & Roadmap**
+
+- Expand forecasting capabilities with XGBoost, LightGBM, and LSTM models.
+- Implement rolling-origin validation for improved forecasting reliability.
+- Integrate promotional, pricing, holiday, and supplier lead-time variables.
+- Introduce ABC/XYZ inventory classification and segmentation.
+- Develop probabilistic demand forecasting and service-level optimization.
+- Simulate demand fluctuations and supplier-delay scenarios.
+- Implement database integration, authentication, and role-based access control.
+- Containerize the application using Docker and enable cloud deployment.
+- Integrate approved ERP and Warehouse Management System (WMS) data sources.
 
 ## Responsible use and limitations
 Use synthetic, public or explicitly authorized business data. Do not commit confidential sales, supplier, employee or customer information. Forecast quality depends on data quality, stockout censoring, promotions, product lifecycle and structural changes. Validate assumptions with supply-chain professionals before acting on recommendations.
