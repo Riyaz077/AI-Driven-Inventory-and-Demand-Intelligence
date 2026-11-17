@@ -4,11 +4,7 @@
 
 ## Project Overview
 
-An AI-powered supply chain analytics system designed to integrate product-level demand forecasting with intelligent inventory planning and optimization.
-
-The system combines historical demand analysis, machine learning-based forecasting, and inventory management techniques to support data-driven replenishment decisions.
-
-It leverages forecasting approaches such as **Seasonal Naive and Random Forest Regression**, alongside inventory optimization techniques including **Economic Order Quantity (EOQ), Safety Stock, and Reorder Point** calculations.
+An AI-powered supply chain analytics system designed to integrate product-level demand forecasting with intelligent inventory planning and optimization. The system combines historical demand analysis, machine learning-based forecasting, and inventory management techniques to support data-driven replenishment decisions. It leverages forecasting approaches such as **Seasonal Naive and Random Forest Regression**, alongside inventory optimization techniques including **Economic Order Quantity (EOQ), Safety Stock, and Reorder Point** calculations.
 
 An interactive **Streamlit dashboard** and **FastAPI-based REST API** provide capabilities for demand analysis, product-level inventory monitoring, forecasting evaluation, and stock replenishment recommendations.
 
